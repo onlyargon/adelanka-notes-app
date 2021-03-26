@@ -1,0 +1,1 @@
+export const HOME_URL = 'https://adelanka-notes.azurewebsites.net/api/';

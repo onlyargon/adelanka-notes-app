@@ -1,0 +1,21 @@
+.loginContainer {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f3f3;
+}
+
+.loginForm {
+    width: 100%;
+    padding: 5%;
+}
+
+.loginForm-full-width {
+    width: 90%;
+}
+
+.headline {
+    color: white
+}

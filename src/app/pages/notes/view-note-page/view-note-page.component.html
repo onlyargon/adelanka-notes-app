@@ -1,0 +1,24 @@
+<div>
+    <h2>{{Note.noteTitle}}</h2>
+    <p>{{Note.noteContent}}</p>
+
+    <div *ngFor="let comm of Comments">
+        <div class="comments">
+            <p>
+                {{comm.commentContent}}
+            </p>
+            <h6>{{comm.username}}</h6>
+        </div>
+        <br>
+    </div>
+
+    <div>
+        <form>
+            <mat-form-field class="full-width">
+                <mat-label>Comment</mat-label>
+                <textarea matInput placeholder="Your note title" name="myComm" [(ngModel)]="myComment"></textarea>
+            </mat-form-field>
+        </form>
+        <button mat-flat-button color="primary" (click)="saveComment()">Add Comment</button>
+    </div>
+</div>

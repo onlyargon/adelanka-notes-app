@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Add note</h2>
+    <div>
+        <form>
+            <mat-form-field class="full-width">
+                <mat-label>Note Title</mat-label>
+                <input matInput placeholder="Your note title" name="NoteTitle" [(ngModel)]="noteTitle">
+            </mat-form-field>
+            <mat-form-field class="full-width">
+                <mat-label>Note</mat-label>
+                <textarea matInput placeholder="Your note title" name="NoteCon" [(ngModel)]="noteContent"></textarea>
+            </mat-form-field>
+        </form>
+        <button mat-flat-button color="primary" (click)="saveNote()">Save</button>
+    </div>
+</div>
