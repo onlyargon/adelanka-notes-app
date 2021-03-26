@@ -13,6 +13,8 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class HomePageComponent implements OnInit {
   noteList = [];
+  SearchText : any;
+  filteredNotesList = [];
   constructor(private webService: WebServiceService, public dialog: MatDialog, private router: Router, private commonService:CommonService) { }
 
   ngOnInit(): void {
@@ -36,7 +38,7 @@ export class HomePageComponent implements OnInit {
     this.webService.getAllNotes().subscribe((resp:any) => {
       if (resp != null && resp.Code == 0) {
         this.noteList = resp.Data;
-
+        this.filteredNotesList = this.noteList;
       } else {
         //this.router.navigate(['home']);
       }
@@ -59,6 +61,12 @@ export class HomePageComponent implements OnInit {
   logOut(){
     localStorage.clear();
     this.router.navigate(['auth']);
+  }
+
+  searchNotes(){
+
+    var temp = this.noteList.filter(x => x.noteTitle.toLocaleLowerCase().includes(this.SearchText.toLocaleLowerCase()));
+    this.filteredNotesList = temp;
   }
 
 }

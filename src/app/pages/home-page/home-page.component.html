@@ -17,13 +17,13 @@
         <form>
             <mat-form-field class="full-width">
                 <mat-label>Search..</mat-label>
-                <input type="search" matInput placeholder="c# .net core">
+                <input type="search" matInput placeholder="c# .net core" name="noteSearch" [(ngModel)]="SearchText" (ngModelChange)="searchNotes()">
                 <mat-icon matSuffix>search</mat-icon>
             </mat-form-field>
         </form>
     </div>
     <div>
-        <div *ngFor="let note of noteList">
+        <div *ngFor="let note of filteredNotesList">
             <mat-card (click)="openNoteView(note)">
                 <mat-card-title>
                     {{note.noteTitle}}
